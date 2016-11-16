@@ -1,0 +1,100 @@
+html, body {
+	margin: 0; 
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: #DD4339;
+  box-shadow: 0px 3px 10px grey;
+}
+
+.nav h1{ 
+  color: white;
+  float: left;
+  position: relative;
+  left: 2%;
+}
+
+
+.controls {
+  position: relative;
+  margin-top: 15px;
+  right: -20%;
+  
+}
+
+
+.country{
+  color: white;
+	display: inline-block;
+	width: 30%;
+	height: 34px;
+	padding: 6px 12px;
+	line-height: 1.5;
+	border-radius: 4px;
+	background-color: #DF6155;
+	border: none;
+	font-weight: bold;
+  font-size: 20px;
+}
+
+.result {
+  position: relative;
+  top: 20px;
+  padding: 15px;
+  margin: 50px auto;
+  background: #F0F0F0;
+  border: 1px solid #CCC;
+  height: 100%;
+}
+
+label{
+  color: white;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+
+.lookup {
+  border: none;
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+.lookup:focus {
+  outline: none;
+}
+.country:focus {
+    outline: none;
+    border: 0.5px solid #ccffff;
+}
+.lookup:hover {
+  cursor: pointer;
+  background: #850e08;
+  text-decoration: none;
+}
+
+ul {
+    background: #ff9999;
+    padding: 20px;
+}
+
+ul li {
+    background: #ffe5e5;
+    padding: 5px;
+    margin-left: 35px;
+}
