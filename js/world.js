@@ -5,22 +5,39 @@ window.onload = function() {
     var search = document.getElementById("country");
 	request.addEventListener("click", function(e) {
 	    e.preventDefault();
-	    var country = search.value;
+	    var country = search.value
 		if(country != ""){
 			httpRequest = new XMLHttpRequest();
 			httpRequest.onreadystatechange = getInformation;
-			var url = "world.php?country=" + country;
+			var url = "world.php?all=false&country=" + country;
 	    	httpRequest.open("GET", url);
 	    	httpRequest.send();
 		}
 		else{
-			result.innerHTML = "<h2>Search Result</h2><p>Please enter a country<p>";
+			var checked = document.getElementById("squaredFour").checked;
+			console.log(checked);
+			if(checked){
+				httpRequest = new XMLHttpRequest();
+				httpRequest.onreadystatechange = getInformation;
+				var url = "world.php?all=true&country=all";
+		    	httpRequest.open("GET", url);
+		    	httpRequest.send();
+			}
+			else{
+				result.innerHTML = "<h2>Search Result</h2><p>Please enter a country<p>";
+			}
 		}
 	});
 	function getInformation() {
 	    if (httpRequest.readyState === XMLHttpRequest.DONE){
 			if (httpRequest.status === 200) {
-				result.innerHTML = "<h2>Search Result</h2>"+httpRequest.responseText;
+				var responseText = httpRequest.responseText;
+				if(responseText == "FALSE"){
+					result.innerHTML = "<h2>Search Result</h2><p>Sorry. Could not find anything with your query.<p>";
+				}
+				else {
+					result.innerHTML = "<h2>Search Result</h2>"+responseText;
+				}
 			}
 		}
 	}
